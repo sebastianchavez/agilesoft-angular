@@ -60,6 +60,9 @@ export class HomeComponent implements OnInit {
           this.totalHeros = this.superherosById.concat(this.superherosBySkill);
         }
         this.logger.info(this.idLog, 'filterSuperheroById', {info: 'Success', response: res});
+      },err => {
+        this.flags.loadId = false;
+        this.logger.error(this.idLog, 'filterSuperheroById', {info: 'Error', error: err})
       });
   }
 
