@@ -1,0 +1,28 @@
+.superhero {
+    padding: 5px;
+    display: flex;
+}
+
+.superhero img {
+    justify-content: flex-start;
+}
+
+.superhero div {
+    padding: 5px 0px 0px 20px;
+    justify-content: flex-end;
+}
+
+.superhero label {
+    color: gray;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+}
+
+h5{
+    font-weight: bold;
+}
+

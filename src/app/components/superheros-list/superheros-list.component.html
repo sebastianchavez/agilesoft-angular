@@ -1,0 +1,23 @@
+<div *ngIf="load" class="text-center mt-4">
+    <div class="spinner-border" role="status"></div>
+</div>
+
+<div *ngIf="selected && !load && superheros.length == 0">
+    <div class="alert alert-success">
+        Superhéroe no encontrado
+    </div>
+</div>
+
+
+<div *ngIf="!load">
+    <div *ngFor="let s of superheros">
+        <div class="superhero">
+            <img [src]="s.avatarURL" onError="this.src='assets/imgs/non-image.png'" class="avatar" alt="">
+            <div>
+                <h5>{{s.nombre}}</h5>
+                <label>{{s.nombre}}</label>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>

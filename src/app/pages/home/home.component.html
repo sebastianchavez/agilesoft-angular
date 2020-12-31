@@ -1,0 +1,72 @@
+<div class="container pt-4">
+    <div class="card card-body">
+        <h4>Según Id:</h4>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card card-body mb-2">
+                    <div class="form-group">
+                        <label>Identificador</label>
+                        <select name="" class="form-control" id="" [(ngModel)]="filter.id" (change)="filterSuperheroById()">
+                            <option *ngFor="let id of ids" [value]="id">{{id}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Superhéroes</h4>
+                    </div>
+                    <div class="card-body">
+                        <app-superheros-list [superheros]="superherosById" [load]="flags.loadId" [selected]="flags.selectedId"></app-superheros-list>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card card-body mt-4">
+        <h4>Según Habilidad de volar:</h4>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card card-body mb-2">
+                    <div class="form-group">
+                        <label>Puede volar</label>
+                        <select class="form-control" [(ngModel)]="filter.fly" (change)="filterSuperherosFly()">
+                            <option *ngFor="let fly of canFly" [value]="fly.value">{{fly.text}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Superhéroes</h4>
+                    </div>
+                    <div class="card-body">
+                        <app-superheros-list [superheros]="superherosBySkill" [load]="flags.loadFly" [selected]="flags.selectedFly"></app-superheros-list>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card card-body mt-4">
+        <div class="row">
+            <div class="col-md-4 text-center mt-5">
+                <h4>Total</h4>
+                <h4>{{totalHeros.length}}</h4>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Superhéroes</h4>
+                    </div>
+                    <div class="card-body">
+                        <app-superheros-list [superheros]="totalHeros" [load]="flags.loadTotal" [selected]="flags.selectedTotal"></app-superheros-list>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
